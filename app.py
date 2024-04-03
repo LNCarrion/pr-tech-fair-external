@@ -10,7 +10,7 @@ from flaskcors import CORS
 app = Flask(name)
 CORS(app)
 loaddotenv()
-openai.apikey = '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'
+openai.apikey = 
 
 def get_openai_response(prompt_text):
     """
