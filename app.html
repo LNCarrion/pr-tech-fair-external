@@ -8,7 +8,7 @@
   <body>
     <h2>chat with the Bot</h2>
     <input type="text" id="messageInput" placeholder="Say Something..." />
-    <button onclick="sendMessage()">Send</button>
+    <button onClick="sendMessage()">Send</button>
     <p id="responseArea"></p>
     <script>
       function sendMessage() {
@@ -22,7 +22,7 @@
         })
           .then((response) => response.json())
           .then((data) => {
-            doctument.getElementById("resonseArea").innerText = data.response;
+            document.getElementById("responseArea").innerText = data.response;
           })
           .catch((error) => {
             console.error("Error:", error);
