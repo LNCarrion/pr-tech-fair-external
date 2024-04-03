@@ -1,16 +1,19 @@
 import os
 import openai
-from dotenv import loaddotenv
+from dotenv import load_dotenv
 import random
-from flaskcors import CORS
+from flask_cors import CORS
+from flask import jsonify
+from flask import Flask
+from flask import request
 
 
 
 
-app = Flask(name)
+app = Flask(__name__)
 CORS(app)
-loaddotenv()
-openai.apikey = 
+load_dotenv()
+openai.apikey = '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'
 
 def get_openai_response(prompt_text):
     """
@@ -51,5 +54,5 @@ def chat():
 
 
 
-if __name == "__main":
+if __name__ == "__main":
     app.run(debug=True)
