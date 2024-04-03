@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Chat with the Bot</title>
 </head>
 
 <body>
-  <h2>chat with the Bot</h2>
+  <h2>Chat with the Bot</h2>
   <input type="text" id="messageInput" placeholder="Say Something..." />
-  <button onClick="sendMessage()">Send</button>
+  <button onclick="sendMessage()">Send</button>
   <p id="responseArea"></p>
   <script>
     function sendMessage() {
       var message = document.getElementById("messageInput").value;
-      fetch("http://127.0.0.1:5000", {
+      fetch("http://127.0.0.1:5000/chat", {
         method: "POST",
         headers: {
-          "Content Type": "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ messaage: message }),
+        body: JSON.stringify({ message: message }), // Corrected typo here
       })
         .then((response) => response.json())
         .then((data) => {
